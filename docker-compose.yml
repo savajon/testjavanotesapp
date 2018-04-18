@@ -1,0 +1,10 @@
+version: '3'
+services:
+  java:
+    build: ./Java/.
+    ports:
+     - "8080:8080"
+  couchdb:
+    build: ./CouchDB/.
+    ports:
+     - "5984:5984"
