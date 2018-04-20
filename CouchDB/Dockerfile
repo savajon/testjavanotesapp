@@ -14,8 +14,6 @@ FROM debian:jessie
 
 LABEL maintainer="CouchDB Developers dev@couchdb.apache.org"
 
-# Install instructions from https://cwiki.apache.org/confluence/display/COUCHDB/Debian
-
 RUN groupadd -r couchdb && useradd -d /var/lib/couchdb -g couchdb couchdb
 
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
@@ -38,7 +36,7 @@ RUN set -ex; \
     \
     dpkgArch="$(dpkg --print-architecture | awk -F- '{ print $NF }')"; \
     \
-# install gosu
+# install  
     wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/${GOSU_VERSION}/gosu-$dpkgArch"; \
     wget -O /usr/local/bin/gosu.asc "https://github.com/tianon/gosu/releases/download/$GOSU_VERSION/gosu-$dpkgArch.asc"; \
     export GNUPGHOME="$(mktemp -d)"; \
